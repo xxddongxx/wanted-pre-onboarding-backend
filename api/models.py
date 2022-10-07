@@ -37,3 +37,7 @@ class User(models.Model):
 
     def __str__(self):
         return f'{self.name} : {self.birth} - {self.age}'
+
+class Application(models.Model):
+    jobPost = models.ForeignKey(JobPost, related_name="jobPost", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="user", on_delete=models.CASCADE)

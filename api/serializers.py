@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models import Company, JobPost, User
+from api.models import Company, JobPost, User, Application
 
 
 class CompanySerializer(serializers.ModelSerializer):
@@ -45,4 +45,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
 
+class ApplicationSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = Application
+        fields = '__all__'
