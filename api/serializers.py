@@ -1,14 +1,16 @@
 from rest_framework import serializers
 
-from api.models import Company, JobPost
+from api.models import Company, JobPost, User
 
 
 class CompanySerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Company
         fields = '__all__'
 
 class JobPostCreateSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = JobPost
         fields = '__all__'
@@ -31,9 +33,16 @@ class JobPostListSerializer(serializers.ModelSerializer):
         model = JobPost
         fields = ['id', 'company_name', 'country', 'city', 'position', 'compensation', 'stack']
 
-class JobPostUpdateserializer(serializers.ModelSerializer):
+class JobPostUpdateSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = JobPost
         fields = ['position', 'compensation', 'content', 'stack']
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = '__all__'
 
 
