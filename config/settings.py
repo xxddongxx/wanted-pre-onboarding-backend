@@ -81,6 +81,20 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+    # PostgreSQL DB test
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'wanted',
+    #     'USER': '사용자아이디',
+    #     'PASSWORD': '비밀번호',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics, filters
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
@@ -114,3 +114,11 @@ class ApplicationViewSet(viewsets.ViewSet):
         application = get_object_or_404(queryset, pk=pk)
         application.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class SearchKeywordkViewSet(viewsets.ModelViewSet):
+    queryset = JobPost.objects.all()
+    serializer_class = serializers.JobPostListSerializer
+
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['company__name', 'position', 'stack']
