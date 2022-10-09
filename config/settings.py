@@ -82,6 +82,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 
+    # # MySQL DB test
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'wanted',
+    #     'USER': 'ddong',
+    #     'PASSWORD': '비밀번호',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
+
     # PostgreSQL DB test
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
